@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    RED.nodes.registerType('atomberg-credentials',{
+        category: 'config',
+        defaults: {
+            "api-key": {value: "", required: true},
+            "refresh-token": {value: "", required: true},
+        },
+        label: function() {
+            return this["api-key"] + ":"+this["refresh-token"];
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="atomberg-credentials">
+    <div class="form-row">
+        <label for="node-input-api-key"><i class="fa fa-database"></i> API Key</label>
+        <input type="text" id="node-input-api-key" placeholder="API Key">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-refresh-token"><i class="fa fa-user"></i> Refresh Token</label>
+        <input type="text" id="node-input-refresh-token" placeholder="Refresh Token">
+    </div>
+</script>
