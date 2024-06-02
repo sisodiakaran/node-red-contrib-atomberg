@@ -2,11 +2,11 @@
     RED.nodes.registerType('atomberg-credentials',{
         category: 'config',
         defaults: {
-            "api-key": {value: "", required: true},
-            "refresh-token": {value: "", required: true},
+            api_key: {value: "", required: true},
+            refresh_token: {value: "", required: true},
         },
         label: function() {
-            return this["api-key"] + ":"+this["refresh-token"];
+            return this.api_key;
         }
     });
 </script>

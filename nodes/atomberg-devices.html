@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('atomberg-devices', {
+        category: 'atomberg',
+        color: '#F6B833',
+        defaults: {
+          "name": {value:""},
+          "creds": {value:"", type:"atomberg-credentials"},
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.svg",
+        label: function() {
+            return this.name||"atomberg-devices";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="atomberg-devices">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-creds"><i class="icon-tag"></i> Credentials</label>
+    <input type="text" id="node-input-creds" placeholder="Atomberg Credentials">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="atomberg-devices">
+    <p>This node can be used to list all of the devices listed in your atomberg account.</p>
+</script>

@@ -20,8 +20,14 @@
   },
   "node-red": {
     "nodes": {
-      "atomberg-credential": "nodes/atomberg-credentials.js",
-      "atomberg-auth": "nodes/atomberg-auth.js"
+      "atomberg-credentials": "nodes/credentials/credentials.js",
+      "atomberg-devices": "nodes/atomberg-devices.js",
+      "atomberg-device-state": "nodes/atomberg-device-state.js",
+      "atomberg-send-command": "nodes/atomberg-send-command.js"
     }
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }

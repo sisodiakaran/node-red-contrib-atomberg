@@ -1,8 +1,8 @@
 module.exports = function (RED) {
-  function RemoteServerNode(n) {
+  function CredentialsNode(n) {
     RED.nodes.createNode(this, n);
-    this["api-key"] = n["api-key"];
-    this["refresh-token"] = n["refresh-token"];
+    this.api_key = n.api_key;
+    this.refresh_token = n.refresh_token;
   }
-  RED.nodes.registerType("atomberg-credentials", RemoteServerNode);
+  RED.nodes.registerType("atomberg-credentials", CredentialsNode);
 };

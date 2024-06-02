@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('atomberg-send-command', {
+        category: 'atomberg',
+        color: '#F6B833',
+        defaults: {
+          "name": {value:""},
+          "device_id": {value:""},
+          "creds": {value:"", type:"atomberg-credentials"},
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "../icons/atomberg-logo.svg",
+        label: function() {
+            return this.name||"atomberg-send-command";
+        },
+        oneditprepare: () => {
+          $("#node-input-command").typedInput({
+              type:"json",
+              types:["json"]
+          })
+        }
+    });
+
+</script>
+
+<script type="text/x-red" data-template-name="atomberg-send-command">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-creds"><i class="icon-tag"></i> Credentials</label>
+    <input type="text" id="node-input-creds" placeholder="Atomberg Credentials">
+  </div>
+  <div class="form-row">
+      <label for="node-input-device_id"><i class="fa fa-tag"></i> Device ID</label>
+      <input type="text" id="node-input-device_id" placeholder="Device ID">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="atomberg-send-command">
+    <p>This node can be used to send command to your atomberg device.</p>
+</script>
