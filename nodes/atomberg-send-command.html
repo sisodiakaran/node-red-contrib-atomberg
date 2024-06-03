@@ -41,11 +41,15 @@
 <script type="text/html" data-help-name="atomberg-send-command">
     <p>This node can be used to send a command to a specific Atomberg device. Requires the device_id of the device you want to control, which can be obtained from the 'Get List of Devices' node. Command input should be provided in `msg.payload` from the previous connected node.</p>
      <p>
-        For example:<br/>
+        For example:
         <code>
-          msg.payload = { "speed": 6 };
-          return msg;
+<pre>
+msg.payload = { "speed": 6 };
+return msg;
+</pre>
         </code>
      </p>
-
+     <p>
+      API Docs:&nbsp;<a href="https://developer.atomberg-iot.com/#get-/v1/send_command" target="_blank">Send Command</a>
+    </p>
 </script>
