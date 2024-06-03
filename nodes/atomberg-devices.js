@@ -22,9 +22,18 @@ module.exports = function (RED) {
 
 
     this.on("input", async function (msg) {
-      const data = await apiClient.get_all_devices();
-      msg.payload = data;
-      node.send(msg);
+      try {
+        node.status({ fill: "blue", shape: "dot", text: "requesting" });
+
+        const data = await apiClient.get_all_devices();
+        msg.payload = data;
+
+        node.status({ fill: "green", shape: "dot", text: "success" });
+        node.send(msg);
+      } catch (err) {
+        node.status({ fill: "red", shape: "dot", text: "error" });
+        node.error("API call failed: " + err.message, msg);
+      }
     });
   }
   RED.nodes.registerType("atomberg-devices", DevicesNode, {
