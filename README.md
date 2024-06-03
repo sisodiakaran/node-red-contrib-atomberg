@@ -32,7 +32,7 @@ npm install node-red-contrib-atomberg
 2. Configure the node with your Atomberg API credentials.
 3. Set up the desired actions and responses.
 
-### Example
+<!-- ### Example
 ```json
 [{
     "id": "1",
@@ -42,7 +42,7 @@ npm install node-red-contrib-atomberg
     "action": "turnOn",
     "fanId": "12345"
 }]
-```
+``` -->
 
 ## Dependencies
 - Node.js v14 or higher
