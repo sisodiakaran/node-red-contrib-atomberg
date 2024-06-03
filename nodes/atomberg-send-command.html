@@ -39,5 +39,13 @@
 </script>
 
 <script type="text/html" data-help-name="atomberg-send-command">
-    <p>This node can be used to send command to your atomberg device.</p>
+    <p>This node can be used to send a command to a specific Atomberg device. Requires the device_id of the device you want to control, which can be obtained from the 'Get List of Devices' node. Command input should be provided in `msg.payload` from the previous connected node.</p>
+     <p>
+        For example:<br/>
+        <code>
+          msg.payload = { "speed": 6 };
+          return msg;
+        </code>
+     </p>
+
 </script>

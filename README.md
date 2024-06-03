@@ -46,7 +46,7 @@ npm install node-red-contrib-atomberg
 
 ## Dependencies
 - Node.js v14 or higher
-- Node-RED v1.3 or higher
+- Node-RED v3.x or higher
 
 ## Third-Party API Information
 This node interacts with the Atomberg API. For more information, please refer to the [Atomberg API Documentation](https://developer.atomberg-iot.com/).
@@ -58,7 +58,7 @@ This node interacts with the Atomberg API. For more information, please refer to
 - Thanks to the Node-RED community for their support.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
 
 ## Contribution Guidelines
 We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "1c03667afb4dea22",
+    "type": "tab",
+    "label": "Atomberg Example",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "df4b6e89711f3004",
+    "type": "inject",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 320,
+    "wires": [["3116611fa5e482dd"]]
+  },
+  {
+    "id": "83d1b0f0f25a9f33",
+    "type": "debug",
+    "z": "1c03667afb4dea22",
+    "name": "debug 1",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 800,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "3116611fa5e482dd",
+    "type": "atomberg-devices",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "creds": "e3caf4479b2ef336",
+    "x": 510,
+    "y": 320,
+    "wires": [["83d1b0f0f25a9f33"]]
+  },
+  {
+    "id": "7e322c542ab606d0",
+    "type": "atomberg-send-command",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "device_id": "",
+    "creds": "e3caf4479b2ef336",
+    "x": 540,
+    "y": 420,
+    "wires": [["83d1b0f0f25a9f33"]]
+  },
+  {
+    "id": "176c4274c12c99f5",
+    "type": "function",
+    "z": "1c03667afb4dea22",
+    "name": "Prepare Command",
+    "func": "msg.payload = {\n    speed: 6\n}\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 310,
+    "y": 420,
+    "wires": [["7e322c542ab606d0"]]
+  },
+  {
+    "id": "33f218fae86e47d2",
+    "type": "inject",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 420,
+    "wires": [["176c4274c12c99f5"]]
+  },
+  {
+    "id": "0e0fe796263d2501",
+    "type": "atomberg-device-state",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "device_id": "",
+    "creds": "e3caf4479b2ef336",
+    "x": 520,
+    "y": 520,
+    "wires": [["83d1b0f0f25a9f33"]]
+  },
+  {
+    "id": "0c78c851e9ae10b0",
+    "type": "inject",
+    "z": "1c03667afb4dea22",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 140,
+    "y": 520,
+    "wires": [["0e0fe796263d2501"]]
+  },
+  {
+    "id": "e3caf4479b2ef336",
+    "type": "atomberg-credentials",
+    "name": "My Credentials"
+  }
+]
