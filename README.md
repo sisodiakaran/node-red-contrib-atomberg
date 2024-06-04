@@ -15,7 +15,7 @@
 ## Introduction
 This Node-RED contrib node allows you to interact with Atomberg's smart fan API, enabling integration and control of Atomberg smart fans within your Node-RED flows.
 
-![Atomberg Flow](image.png "Atomberg Flow")
+![Atomberg Flow](https://raw.githubusercontent.com/sisodiakaran/node-red-contrib-atomberg/master/image.png "Atomberg Flow")
 
 ## Installation
 To install the node, use the following command:
