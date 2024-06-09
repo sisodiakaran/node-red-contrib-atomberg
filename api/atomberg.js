@@ -77,8 +77,11 @@ class AtombergApiClient {
       const response = await this.client.get(endpoint, {
         params: params
       });
-      if(params.device_id == "all") {
-        return response.data.message.devices_state;
+
+      // console.log(params.device_id, response.data);
+
+      if(params.device_id === "all") {
+        return response.data.message.device_state;
       } else {
         return response.data.message.device_state[0];
       }
