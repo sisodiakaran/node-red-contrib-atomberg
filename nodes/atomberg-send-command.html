@@ -4,7 +4,7 @@
         color: '#F6B833',
         defaults: {
           "name": {value:""},
-          "device_id": {value:""},
+          "command": {value:""},
           "creds": {value:"", type:"atomberg-credentials"},
         },
         inputs: 1,
@@ -15,8 +15,9 @@
         },
         oneditprepare: () => {
           $("#node-input-command").typedInput({
-              type:"json",
-              types:["json"]
+              type:"msg",
+              types:["msg"],
+              typeField: "#node-input-command-type"
           })
         }
     });
@@ -33,18 +34,24 @@
     <input type="text" id="node-input-creds" placeholder="Atomberg Credentials">
   </div>
   <div class="form-row">
-      <label for="node-input-device_id"><i class="fa fa-tag"></i> Device ID</label>
-      <input type="text" id="node-input-device_id" placeholder="Device ID">
+      <label for="node-input-command"><i class="fa fa-tag"></i> Command Payload</label>
+      <input type="text" id="node-input-command" placeholder="Command">
+      <input type="hidden" id="node-input-command-type">
   </div>
 </script>
 
 <script type="text/html" data-help-name="atomberg-send-command">
-    <p>This node can be used to send a command to a specific Atomberg device. Requires the device_id of the device you want to control, which can be obtained from the 'Get List of Devices' node. Command input should be provided in `msg.payload` from the previous connected node.</p>
+    <p>This node can be used to send a command to a specific Atomberg device. Requires the device_id of the device you want to control, which can be obtained from the 'Get List of Devices' node. Device ID and Command input should be provided in `msg.payload` from the previous connected node.</p>
      <p>
         For example:
         <code>
 <pre>
-msg.payload = { "speed": 6 };
+msg.payload = {
+  device_id: "ffrvsrv123s",
+  {
+    "speed": 6
+  }
+};
 return msg;
 </pre>
         </code>

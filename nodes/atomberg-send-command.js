@@ -19,11 +19,7 @@ module.exports = function (RED) {
     this.on("input", async function (msg) {
       try {
         node.status({ fill: "blue", shape: "dot", text: "requesting" });
-
-        const data = await apiClient.send_command({
-          device_id: config.device_id,
-          command: msg.payload,
-        });
+        const data = await apiClient.send_command(msg[`${config.command}`]);
         msg.payload = data;
 
         node.status({ fill: "green", shape: "dot", text: "success" });
